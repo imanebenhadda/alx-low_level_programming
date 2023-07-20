@@ -1,34 +1,28 @@
-#include <stdio.h>
+#include "main.h"
 /**
-*main - program that prints either number
-*or fizz or buzz or fizzBuzz
-*
-*
-*Return: returns 0
+*print_triangle - prints a triangle
+*@size:size parameter of triangle
+*Return:returns nothing
 */
-int main(void)
+void print_triangle(int size)
 {
-int num;
-while (num++ < 100)
+int inc1, inc2;
 
-if ((num % 3 == 0) && (num % 5 == 0))
-printf("FizzBuzz ");
-
-else if ((num % 3) == 0)
-printf("Fizz ");
-
-else if ((num % 5) == 0)
+if (size > 0)
 {
-if (num != 100)
-printf("Buzz ");
+for (inc1 = 1; inc1 <= size; inc1++)
+{
+for ((inc2 = size - inc1); inc2 > 0; inc2--)
+_putchar(' ');
 
-else
-printf("Buzz");
+for (inc2 = 0; inc2 < inc1; inc2++)
+_putchar('#');
+
+if (inc1 == size)
+continue;
+
+_putchar('\n');
 }
-
-else
-printf("%d ", num);
-
-printf("\n");
-return (0);
+}
+_putchar('\n');
 }
